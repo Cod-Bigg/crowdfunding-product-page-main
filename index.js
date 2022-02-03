@@ -17,84 +17,99 @@ const blackEdition = document.querySelector("#black-edition");
 let optionToggle = document.querySelector("#bamboo-stand");
 let optionToggleTwo = document.querySelector("#black-edition");
 const inputSpan = document.querySelectorAll(".pledge-error");
-let here;
+let currentPledge = document.querySelector("#currentPledge").innerHTML;
+console.log(typeof currentPledge);
 
+optionToggle.addEventListener("change", () => {
+  optionToggleTwo.checked = false;
+  checkToggle();
+});
 
+optionToggleTwo.addEventListener("change", () => {
+  optionToggle.checked = false;
+  checkToggle();
+});
+const gettingCurrentPledge = () => {
+
+}
 const remainingPledge = () => {
-    if(optionOneParse == 0) {
-        pledgeButton.disabled = true;
-    }
-}
+  if (optionOneParse == 0) {
+    pledgeButton.disabled = true;
+  }
+};
 const pledgeButtonOne = () => {
-    pledgeButton.addEventListener("click", () => {
-        optionToggle.checked = true;
-        
-    })
-}
-
-
+  console.log(optionToggle);
+  pledgeButton.addEventListener("click", () => {
+    optionToggle.checked = true;
+    optionToggleTwo.checked = false;
+    checkToggle();
+  });
+};
 
 const pledgeBtnTwo = () => {
-    console.log(optionToggleTwo);
-    pledgeButtonTwo.addEventListener("click", () => {
-        optionToggleTwo.checked = true;
-    })
+  console.log(optionToggleTwo);
+  pledgeButtonTwo.addEventListener("click", () => {
+    optionToggle.checked = false;
+    optionToggleTwo.checked = true;
+    checkToggle();
+  });
+};
 
-}
 const modalOptionOne = () => {
-    btnOne.addEventListener("click", () => {
-        let pledgeOneVal = pledgeOneInput.value;
-        if(pledgeOneVal < 25){
-            pledgeErrOne.innerHTML="Pledge can not be less than $25";
-            pledgeBorder.style.border = "1px solid red";
-        } else{
-            console.log(pledgeOneVal);
-        }
-    })
-}
+  btnOne.addEventListener("click", () => {
+    let pledgeOneVal = pledgeOneInput.value;
+    if (pledgeOneVal < 25) {
+      pledgeErrOne.innerHTML = "Pledge can not be less than $25";
+      pledgeBorder.style.border = "1px solid red";
+    } else {
+      console.log(currentPledge);
+    }
+  });
+};
 
 const modalOptionTwo = () => {
-    btnTwo.addEventListener("click", () => {
-        let pledgeTwoVal = pledgeTwoInput.value;
-        console.log(pledgeTwoVal);
-        if(pledgeTwoVal < 75){
-            pledgeErrTwo.innerHTML="Pledge can not be less than $75";
-            pledgeBorderTwo.style.border = "1px solid red";
-        } else{
-            console.log(pledgeTwoVal);
-        }
-    })
-}
+  btnTwo.addEventListener("click", () => {
+    let pledgeTwoVal = pledgeTwoInput.value;
+    console.log(pledgeTwoVal);
+    if (pledgeTwoVal < 75) {
+      pledgeErrTwo.innerHTML = "Pledge can not be less than $75";
+      pledgeBorderTwo.style.border = "1px solid red";
+    } else {
+        cur
+    }
+  });
+};
 
-const checkToggle = (toggle) => {
-  if(toggle== true){
+const checkToggle = () => {
+  if (optionToggle.checked == true) {
+    console.log("optionToggle");
     pledgeInfoTwo.style.display = "none";
-    pledgeBorder.style.border = "1px solid #3DB4AB";
-    optionToggleTwo.checked = false;
-    console.log(optionToggle);
-  }else if (optionToggleTwo.checked == true){
+    pledgeBorder.style.border = "3px solid #3DB4AB";
+    pledgeBorderTwo.style.border = "1px solid lightgrey";
+    pledgeInfo.style.display ="block";
+  } else if (optionToggleTwo.checked == true) {
+    console.log("optionToggleTwo");
     pledgeInfo.style.display = "none";
-    pledgeBorderTwo.style.border = "1px solid #3DB4AB";
-    optionToggle.checked = false;
+    pledgeBorderTwo.style.border = "3px solid #3DB4AB";
+    pledgeBorder.style.border = "1px solid lightgrey";
+    pledgeInfoTwo.style.display = "block";
   } else {
-      console.log("other");
+    console.log("other");
   }
-}
+};
 
 const hideSpan = () => {
-    inputSpan.forEach((item ) => {
-        item.addEventListener("focus", () => {
-            item.style.display="none";
-            console.log("none");
-        })
-    })
-
-}
-
+  inputSpan.forEach((item) => {
+    item.addEventListener("focus", () => {
+      item.style.display = "none";
+      console.log("none");
+    });
+  });
+};
 remainingPledge();
 modalOptionOne();
 modalOptionTwo();
 pledgeButtonOne();
 pledgeBtnTwo();
-checkToggle();
+// checkToggle();
 hideSpan();
