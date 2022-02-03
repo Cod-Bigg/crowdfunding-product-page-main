@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | Crowdfunding product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <h2>Crowdfund</h2>
+  <nav>
+  About
+  Discover
+  Get Started
+  </nav>
+<div class="crowdfund-container">
+  <div class="intro-block">
+  <div class="heading-text">
+    <h1>Mastercraft Bamboo Monitor Riser</h1>
+    <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+  </div>
+ <button> Back this project</button>
+ <button>Bookmark</button>
+  </div>
+
+  <div class="crowdfund-track">
+  <p>$89,914</p> 
+  <p>of $100,000 backed</p>
+  <p>5,007 total backers</p>
+  <p>56 days left</p>
+  </div>
+
+  <div class="info">
+  <h3>About this project</h3>
+
+  <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
+  to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
+  your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
+  </p>
+  
+  <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
+  to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+  <div class="crowdfund">
+  <h3>Bamboo Stand</h3>
+ <p class="pledge-color">Pledge $25 or more</p>
+  <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
+  you’ll be added to a special Backer member list.</p>
+  <p><span id="option-1-left">101</span> left</p>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-1">
+    Select Reward
+  </button>
+  </div>
+
+  <div id="crowdfund-option-2" class="crowdfund">
+  <h3>Black Edition Stand</h3>
+  <p class="pledge-color">Pledge $75 or more</p>
+  <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
+  member list. Shipping is included.</p>
+  <p><span>64</span> left</p>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-2">
+    Select Reward
+  </button>
+  </div>
+
+  <div id="crowdfund-option-3" class="crowdfund">
+  <h3>Mahogany Special Edition</h3>
+  <p class="pledge-color-1">Pledge $200 or more</p>
+  <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
+  to our Backer member list. Shipping is included.</p>
+ <p><span>0</span> left</p>
+  <button class="btn btn-primary" disabled>Out of Stock</button>
+  </div>
+  </div>
+</div>
+<!--end of crowdfund- container-->
+
+
+  <!-- Selection modal start -->
+
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Back this project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="no-reward-pledge" class="pledge-option">
+          <input type="radio" id="no-reward" name="pledge">
+          <label for="none">Pledge With no reward</label>
+          <p>Choose to support us without a reward if you simply believe in our project. As a backer, 
+            you will be signed up to receive product updates via email.
+          </p> 
+        </div>
+        <span id="pledge-error-one" class="pledge-error"></span>
+        <div id="crowdfund-option-1" class="pledge-option">
+          <input type="radio" id="bamboo-stand" name="pledge">
+          <label>Bamboo Stand</label>
+          <p class="pledge-color">Pledge $25 or more</p>  <p><span>101</span> left</p>
+
+          <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
+          you’ll be added to a special Backer member list.</p>
+          <div class="pledge-info">
+          <hr>
+          <label for="none">Enter pledge amount</label>
+          <input type="number" placeholder="$25" id="pledge-amount">
+          <button class="btn-primary" id="btn-one">Continue</button>
+          </div>
+        </div>
+
+        <span id="pledge-error-two" class="pledge-error"></span>
+        <div id="crowdfund-option-2-modal" class="pledge-option">
+          <input type="radio" id="black-edition" name="pledge" value="bamboo">
+          <label for="none">Black Edition Stand</label>
+          <p class="pledge-color">Pledge $75 or more</p>  <p><span>64</span> left</p>
+
+          <p>You get a Black Speical Edition computer stand and a personal thank you. You'll be added to our Black member list. Shipping is included</p>
+          <div class="pledge-info-two">
+          <hr>
+          
+          <label for="none">Enter pledge amount</label>
+          <input type="number" placeholder="$75" id="pledge-amount-two">
+          <button class="btn-primary" id="btn-two">Continue</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Success modal end -->
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
