@@ -24,7 +24,7 @@ const inputSpan = document.querySelectorAll(".pledge-error");
 let currentPledge = document.querySelector("#currentPledge");
 let currentBackers = document.querySelector("#currentBackers");
 let replaceBackText = parseInt(currentBackers.innerHTML.replace(/,/g, ''));
-const num = parseFloat(currentPledge.innerHTML.replace(/,/g, ''));
+let num = parseFloat(currentPledge.innerHTML.replace(/,/g, ''));
 let totalPledgeString;
 const optionOneLeft = document.querySelector("#option-1-left");
 const blackEditionLeft = document.querySelector("#black-edition-left");
@@ -85,17 +85,23 @@ const modalOptionOne = () => {
       pledgeBorder.style.border = "1px solid red";
       //if value is not less than 25 begin calculation
     } else {
+        console.log(pledgeOneValParse);
         //adding the values of the initial pledge value and the input value
+        console.log("num", num);
         totalPledge = num + pledgeOneValParse;
+        console.log(totalPledge);
         //turning the total pledge value into a string, and adding the commas back
+        num = totalPledge;
         totalPledgeString = totalPledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        console.log(totalPledgeString);
         //set new string value to the pledge HTML
         currentPledge.innerHTML = totalPledgeString;
+        console.log(currentPledge.innerHTML);
 
         //adding one to the backer total 
-        newBackerTotal = replaceBackText++;
+        replaceBackText++;
         //turning the new backer total into a string, and adding the commas back in
-        newBackerString = newBackerTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        newBackerString = replaceBackText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         //set the new backer number to the HTML
         currentBackers.innerHTML = newBackerString;
         //turning the bamboo pledge amount into a number
@@ -129,15 +135,15 @@ const modalOptionTwo = () => {
     } else {
         //pledge amount of initial HTML and input
        totalPledge = num + pledgeTwoValParse;
+       num = totalPledge;
        //changing total pledge back to a string. Using replace to add commas back in
        totalPledgeString = totalPledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
        //setting the new total pledge amount to the pledge HTML
        currentPledge.innerHTML = totalPledgeString;
         //adding one to the backer total 
-        newBackerTotal = replaceBackText++;
-        console.log(newBackerTotal);
+        replaceBackText++;
         //setting the new backer total to a string. Using replace to add commas back in
-        newBackerString = newBackerTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        newBackerString = replaceBackText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         ///setting the new backer string to the HTML
         currentBackers.innerHTML = newBackerString;
         //turning black edition HTML to a number
