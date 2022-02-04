@@ -18,7 +18,11 @@ let optionToggle = document.querySelector("#bamboo-stand");
 let optionToggleTwo = document.querySelector("#black-edition");
 const inputSpan = document.querySelectorAll(".pledge-error");
 let currentPledge = document.querySelector("#currentPledge").innerHTML;
-console.log(typeof currentPledge);
+console.log(currentPledge);
+let totalPledge;
+let currentParse;
+let num = parseFloat(currentPledge.replace(/,/g, ''));
+let totalPledgeString;
 
 optionToggle.addEventListener("change", () => {
   optionToggleTwo.checked = false;
@@ -62,7 +66,7 @@ const modalOptionOne = () => {
       pledgeErrOne.innerHTML = "Pledge can not be less than $25";
       pledgeBorder.style.border = "1px solid red";
     } else {
-      console.log(currentPledge);
+        
     }
   });
 };
@@ -70,25 +74,31 @@ const modalOptionOne = () => {
 const modalOptionTwo = () => {
   btnTwo.addEventListener("click", () => {
     let pledgeTwoVal = pledgeTwoInput.value;
-    console.log(pledgeTwoVal);
-    if (pledgeTwoVal < 75) {
+    const pledgeTwoValParse = parseFloat(pledgeTwoVal);
+    currentParse = parseInt(num);
+    if (pledgeTwoValParse < 75) {
       pledgeErrTwo.innerHTML = "Pledge can not be less than $75";
       pledgeBorderTwo.style.border = "1px solid red";
     } else {
-        cur
+       totalPledge = num + pledgeTwoValParse;
+       totalPledgeString = totalPledge.toString();
+       console.log(totalPledgeString);
+       currentPledge.innerHTML = totalPledgeString;
+       console.log(currentPledge.innerHTML);
+       pledgeTwoInput.value ="";
     }
   });
 };
 
 const checkToggle = () => {
   if (optionToggle.checked == true) {
-    console.log("optionToggle");
+  
     pledgeInfoTwo.style.display = "none";
     pledgeBorder.style.border = "3px solid #3DB4AB";
     pledgeBorderTwo.style.border = "1px solid lightgrey";
     pledgeInfo.style.display ="block";
   } else if (optionToggleTwo.checked == true) {
-    console.log("optionToggleTwo");
+   
     pledgeInfo.style.display = "none";
     pledgeBorderTwo.style.border = "3px solid #3DB4AB";
     pledgeBorder.style.border = "1px solid lightgrey";
