@@ -17,8 +17,7 @@ input::-webkit-inner-spin-button {
 }
 
 .crowdfund-container{
-    margin-top: 300px;
-   
+    margin-top: 300px; 
 }
 nav{
   float: right;
@@ -33,12 +32,12 @@ h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 500px;
+    justify-content: space-between;
+    width: 700px;
     margin: 0 auto;
     background-color: white;
     border-radius: 8px;
-    padding: 15px;
+    padding: 25px;
 }
 
 .crowdfund-track{
@@ -46,12 +45,72 @@ h2{
     text-align: center;
     background-color: white;
     height: 200px;
-    width: 500px;
+    width: 700px;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 55px;
+}
+.backPledge{
+    background-color:#3DB4AB;
+    color: white;
+    border-radius: 30px;
+    padding: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+}
+.vl{
+    border-left: 1px solid lightgray;
+  height: 40px;
+  position: absolute;
+  left: 58%;
+  margin-left: -3px;
+  bottom: 20px;
+}
+.vl2{
+    border-left: 1px solid lightgray;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  bottom:20px;
+}
+.pledgeAmnt{
+    display: flex;
+    flex-direction: column;
+}
+.pledgeAmnt p:first-child{
+    font-size: 30px;
+    font-weight: bold;
+}
+.pledgeAmnt p:nth-child(2){
+    font-size: 15px;
+    margin-bottom: 330px;
+}
+.backers{
+    display: flex;
+    flex-direction: column;
+}
+.backers p{
+    font-size: 15px;
+    margin-top: 15px;
+}
+.backers span{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+.days-left p{
+    font-size: 30px;
+    font-weight: bold;
+}
+.days-left span{
+    font-size: 15px;
 }
 .info{
     background-color: white;
-    width: 500px;
+    width: 700px;
     margin: 50px auto;
     padding: 15px;
     line-height: 25px;

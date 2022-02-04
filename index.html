@@ -29,15 +29,23 @@
     <h1>Mastercraft Bamboo Monitor Riser</h1>
     <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
   </div>
- <button> Back this project</button>
- <button>Bookmark</button>
+ <button class="backPledge"> Back this project</button>
+ <button class="backPledge">Bookmark</button>
   </div>
 
   <div class="crowdfund-track">
-  <p id="currentPledge">89,914</p> 
-  <p>of $100,000 backed</p>
-  <p>5,007 total backers</p>
-  <p>56 days left</p>
+    <div class="pledgeAmnt">
+    <p>$<span id="currentPledge">89,914</span></p> 
+    <p>of $100,000 backed</p>
+    </div>
+    <div class="vl2"></div>
+    <div class="backers">
+  <span id="currentBackers">5,007</span><p>total backers</p>
+  </div>
+  <div class="vl"></div>
+  <div class="days-left">
+  <p>56</p><span>days left</span>
+  </div>
   </div>
 
   <div class="info">
@@ -66,7 +74,7 @@
   <p class="pledge-color">Pledge $75 or more</p>
   <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
   member list. Shipping is included.</p>
-  <p><span>64</span> left</p>
+  <p><span id="black-edition-left">64</span> left</p>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-2">
     Select Reward
   </button>
@@ -110,7 +118,7 @@
         <div id="crowdfund-option-1" class="pledge-option">
           <input type="radio" id="bamboo-stand" name="pledge">
           <label>Bamboo Stand</label>
-          <p class="pledge-color">Pledge $25 or more</p>  <p><span>101</span> left</p>
+          <p class="pledge-color">Pledge $25 or more</p>  <p><span id="bamboo-edition-left">101</span> left</p>
 
           <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
           you’ll be added to a special Backer member list.</p>
@@ -118,7 +126,7 @@
           <hr>
           <label for="none">Enter pledge amount</label>
           <input type="number" placeholder="$25" id="pledge-amount">
-          <button class="btn-primary" id="btn-one">Continue</button>
+          <button class="btn-primary" id="btn-one" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Continue</button>
           </div>
         </div>
 
@@ -126,7 +134,7 @@
         <div id="crowdfund-option-2-modal" class="pledge-option">
           <input type="radio" id="black-edition" name="bamboo-stand" value="bamboo">
           <label for="none">Black Edition Stand</label>
-          <p class="pledge-color">Pledge $75 or more</p>  <p><span>64</span> left</p>
+          <p class="pledge-color">Pledge $75 or more</p>  <p><span id="blackEditionLeft">64</span> left</p>
 
           <p>You get a Black Speical Edition computer stand and a personal thank you. You'll be added to our Black member list. Shipping is included</p>
           <div class="pledge-info-two">
@@ -145,11 +153,6 @@
     </div>
   </div>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Close
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="ModalToggle2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
