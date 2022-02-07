@@ -294,4 +294,41 @@ height: 1px;
         width: 300px;
     }
   }
+  @media only screen and (max-width: 500px) {
+
+    .intro-block{
+        width: 300px;
+    }
+    .crowdfund-track{
+        width: 300px;
+        height: 400px;
+    }
+    .info{
+        width: 300px;
+    }
+    .pledgeAmnt{
+        height: 100px;
+    }
+    .crowdfund-track{
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+    }
+    .days-left{
+        margin-bottom: 250px;
+    }
+    .vl{
+      left: 60%;
+      bottom: -50px;
+    }
+    .vl2{
+      bottom:-50px;
+    }
+    .modal-content{
+        width: 500px;
+    }
+    .modal-body2{
+        width: 300px;
+    }
+  }
  
