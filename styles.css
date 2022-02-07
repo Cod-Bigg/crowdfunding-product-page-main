@@ -268,16 +268,30 @@ height: 1px;
     padding:20px;
 }
 @media only screen and (max-width: 1300px) {
+    .crowdfund-container{
+        margin-top: 200px; 
+    }
     .intro-block{
-        width: 500px;
+        width: 900px;
     }
     .crowdfund-track{
-        width: 500px;
+        width: 900px;
     }
     .info{
-        width: 500px;
+        width: 900px;
+    }
+    .vl{
+      left: 60%;
+      bottom: -50px;
+    }
+    .vl2{
+      bottom:-50px;
     }
     .modal-content{
         width: 500px;
     }
+    .modal-body2{
+        width: 300px;
+    }
   }
+ 
