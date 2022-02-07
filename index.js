@@ -182,6 +182,7 @@ const disableButtonTwo = () => {
         } else {
             btnTwo.disabled = true;
            console.log("disabled");
+           btnTwo.style.backgroundColor = "#c1edea";
         }
       });
 }
