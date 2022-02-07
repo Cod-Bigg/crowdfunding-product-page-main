@@ -7,6 +7,21 @@ body{
     background-size: 100%;
     background-color: #FAFAFA;
 }
+h2{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+nav a{
+    padding: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover{
+    text-decoration: none;
+    color:#3DB4AB;
+    font-weight: bold;
+}
 input[type=number] {
     -moz-appearance: textfield;
   }
