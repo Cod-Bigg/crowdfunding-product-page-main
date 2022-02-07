@@ -267,3 +267,17 @@ height: 1px;
     text-align: justify;
     padding:20px;
 }
+@media only screen and (max-width: 1300px) {
+    .intro-block{
+        width: 500px;
+    }
+    .crowdfund-track{
+        width: 500px;
+    }
+    .info{
+        width: 500px;
+    }
+    .modal-content{
+        width: 500px;
+    }
+  }
