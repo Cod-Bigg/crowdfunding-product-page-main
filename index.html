@@ -64,7 +64,7 @@
   <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
   you’ll be added to a special Backer member list.</p>
   <p><span id="option-1-left">101</span> left</p>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-1">
+  <button type="button" class="pledge-reward-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-1">
     Select Reward
   </button>
   </div>
@@ -75,7 +75,7 @@
   <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
   member list. Shipping is included.</p>
   <p><span id="black-edition-left">64</span> left</p>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-2">
+  <button type="button" class="pledge-reward-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn-pledge-2">
     Select Reward
   </button>
   </div>
@@ -86,7 +86,7 @@
   <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
   to our Backer member list. Shipping is included.</p>
  <p><span>0</span> left</p>
-  <button class="btn btn-primary" disabled>Out of Stock</button>
+  <button class="pledgeButton" disabled>Out of Stock</button>
   </div>
   </div>
 </div>
@@ -114,7 +114,7 @@
             you will be signed up to receive product updates via email.
           </p> 
         </div>
-        <span id="pledge-error-one" class="pledge-error"></span>
+     
         <div id="crowdfund-option-1" class="pledge-option">
           <input type="radio" id="bamboo-stand" name="pledge">
           <label>Bamboo Stand</label>
@@ -125,8 +125,8 @@
           <div class="pledge-info">
           <hr>
           <label for="none">Enter pledge amount</label>
-          <input type="number" placeholder="$25" id="pledge-amount">
-          <button class="btn-primary" id="btn-one" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Continue</button>
+          <input type="number" placeholder="25" id="pledge-amount" required>
+          <button class="pledgeButton" id="btn-one" data-bs-target="#ModalToggle2" data-bs-toggle="modal" disabled>Pledge</button>
           </div>
         </div>
 
@@ -141,8 +141,8 @@
           <hr>
           
           <label for="none">Enter pledge amount</label>
-          <input type="number" placeholder="$75" id="pledge-amount-two">
-          <button class="btn-primary" id="btn-two" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Continue</button>
+          <input type="number" placeholder="75" id="pledge-amount-two" required>
+          <button class="pledgeButton" id="btn-two" data-bs-target="#ModalToggle2" data-bs-toggle="modal" disabled>Pledge</button>
           </div>
         </div>
       </div>

@@ -76,6 +76,15 @@ h2{
   margin-left: -50px;
   bottom:20px;
 }
+.pledge-reward-button{
+    background-color: #3DB4AB;
+    border-radius: 30px;
+    height: 40px;
+    color:white;
+    margin-top: 5px;
+    width: 150px;
+    border: none;
+}
 .pledgeAmnt{
     display: flex;
     flex-direction: column;
@@ -191,10 +200,17 @@ label{
     font-weight: bold;
     margin-left: 300px;
 }
-.pledge-error{
-    color: red;
-    font-size: 20px;
-    margin-top: 300px;
+.pledgeButton{
+    background-color: #c1edea;
+    border-radius: 30px;
+    height: 40px;
+    color:white;
+    margin-top: 5px;
+    width: 150px;
+    border: none;
+}
+.pledgeButtonJs{
+    background-color: #3DB4AB;
 }
 hr
 {
@@ -209,11 +225,16 @@ height: 1px;
 }
 .pledge-option input[type="number"]{
     width: 65px;
+    font-weight: bold;
     border-radius: 20px;
     margin-left: 300px;
-    margin-right: 40px;
-    border: 1px solid lightgray;
+    margin-right: 10px;
+    border: none;
     padding: 7px;
+    text-align: center;
+    background-image: url("https://i.ibb.co/NnqnV66/icon-dollar-1.png");
+    background-repeat: no-repeat;
+    background-position:left;
 }
 #crowdfund-option-2-modal span{
     margin-left: 265px;

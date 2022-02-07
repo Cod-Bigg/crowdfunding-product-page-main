@@ -10,8 +10,6 @@ const pledgeOneInput = document.querySelector("#pledge-amount");
 const pledgeTwoInput = document.querySelector("#pledge-amount-two");
 const btnOne = document.querySelector("#btn-one");
 const btnTwo = document.querySelector("#btn-two");
-let pledgeErrOne = document.querySelector("#pledge-error-one");
-let pledgeErrTwo = document.querySelector("#pledge-error-two");
 const pledgeBorder = document.querySelector("#crowdfund-option-1");
 const pledgeBorderTwo = document.querySelector("#crowdfund-option-2-modal");
 const bambooStand = document.querySelector("#bamboo-stand");
@@ -20,11 +18,11 @@ const pledgeInfo = document.querySelector(".pledge-info");
 const blackEdition = document.querySelector("#black-edition");
 let optionToggle = document.querySelector("#bamboo-stand");
 let optionToggleTwo = document.querySelector("#black-edition");
-const inputSpan = document.querySelectorAll(".pledge-error");
+const input = document.querySelectorAll("input");
 let currentPledge = document.querySelector("#currentPledge");
 let currentBackers = document.querySelector("#currentBackers");
 let replaceBackText = parseInt(currentBackers.innerHTML.replace(/,/g, ''));
-let num = parseFloat(currentPledge.innerHTML.replace(/,/g, ''));
+const num = parseFloat(currentPledge.innerHTML.replace(/,/g, ''));
 let totalPledgeString;
 const optionOneLeft = document.querySelector("#option-1-left");
 const blackEditionLeft = document.querySelector("#black-edition-left");
@@ -73,33 +71,21 @@ const pledgeBtnTwo = () => {
 };
 
 const modalOptionOne = () => {
-  btnOne.addEventListener("click", () => {
+  btnOne.addEventListener("click", (e) => {
     //setting first input value to pledgeOneVal
     let pledgeOneVal = pledgeOneInput.value;
     //turning pledgeOneVal into a number
     const pledgeOneValParse = parseFloat(pledgeOneVal);
-    //check to see if the value is less than 25
-    //if value is less than 25 set error HTML and border error
-    if (pledgeOneValParse < 25) {
-      pledgeErrOne.innerHTML = "Pledge can not be less than $25";
-      pledgeBorder.style.border = "1px solid red";
-      //if value is not less than 25 begin calculation
-    } else {
-        console.log(pledgeOneValParse);
         //adding the values of the initial pledge value and the input value
-        console.log("num", num);
         totalPledge = num + pledgeOneValParse;
-        console.log(totalPledge);
         //turning the total pledge value into a string, and adding the commas back
-        num = totalPledge;
         totalPledgeString = totalPledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        console.log(totalPledgeString);
         //set new string value to the pledge HTML
         currentPledge.innerHTML = totalPledgeString;
-        console.log(currentPledge.innerHTML);
 
         //adding one to the backer total 
         replaceBackText++;
+        console.log(newBackerTotal);
         //turning the new backer total into a string, and adding the commas back in
         newBackerString = replaceBackText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         //set the new backer number to the HTML
@@ -114,7 +100,6 @@ const modalOptionOne = () => {
         bambooEditionLeft.innerHTML = newBambooEditionString;
         optionOneLeft.innerHTML = newBambooEditionString;
         pledgeOneInput.value ="";
-    }
   });
 };
 
@@ -128,20 +113,15 @@ const modalOptionTwo = () => {
     currentParse = parseInt(num);
     //check if vale is less then 75
     //if value is less than 75 set error border and text
-    if (pledgeTwoValParse < 75) {
-      pledgeErrTwo.innerHTML = "Pledge can not be less than $75";
-      pledgeBorderTwo.style.border = "1px solid red";
-      //if the value is not less then 75
-    } else {
         //pledge amount of initial HTML and input
        totalPledge = num + pledgeTwoValParse;
-       num = totalPledge;
        //changing total pledge back to a string. Using replace to add commas back in
        totalPledgeString = totalPledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
        //setting the new total pledge amount to the pledge HTML
        currentPledge.innerHTML = totalPledgeString;
         //adding one to the backer total 
         replaceBackText++;
+        console.log(newBackerTotal);
         //setting the new backer total to a string. Using replace to add commas back in
         newBackerString = replaceBackText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         ///setting the new backer string to the HTML
@@ -157,7 +137,6 @@ const modalOptionTwo = () => {
         blackLeft.innerHTML = newBlackEditionString;
        //clearing the input
        pledgeTwoInput.value ="";
-    }
   });
 };
 //check what radio button is toggled
@@ -181,19 +160,36 @@ const checkToggle = () => {
   }
 };
 
-const hideSpan = () => {
-  inputSpan.forEach((item) => {
-    item.addEventListener("focus", () => {
-      item.style.display = "none";
-      console.log("none");
+const disableButtonOne = () => {
+    pledgeOneInput.addEventListener("input", () => {
+      if(pledgeOneInput.value >= 25){
+          btnOne.disabled = false;
+          btnOne.style.backgroundColor = "#3DB4Ab";
+        
+      } else {
+          btnOne.disabled = true;
+          console.log("disabled");
+      }
     });
-  });
 };
+
+const disableButtonTwo = () => {
+    pledgeTwoInput.addEventListener("input", () => {
+        if(pledgeTwoInput.value >= 75){
+            btnTwo.disabled = false;
+            btnTwo.style.backgroundColor = "#3DB4Ab";
+    
+        } else {
+            btnTwo.disabled = true;
+           console.log("disabled");
+        }
+      });
+}
 //calling functions
 remainingPledge();
 modalOptionOne();
 modalOptionTwo();
 pledgeButtonOne();
 pledgeBtnTwo();
-// checkToggle();
-hideSpan();
+disableButtonOne();
+disableButtonTwo();
