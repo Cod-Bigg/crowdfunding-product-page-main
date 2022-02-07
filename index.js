@@ -28,20 +28,36 @@ const optionOneLeft = document.querySelector("#option-1-left");
 const blackEditionLeft = document.querySelector("#black-edition-left");
 const blackLeft = document.querySelector("#blackEditionLeft")
 const bambooEditionLeft = document.querySelector("#bamboo-edition-left");
+const noPledge = document.querySelector("#no-reward-pledge");
+const noPledgeBtn = document.querySelector("#no-pledge-btn");
+const noRewardToggle = document.querySelector("#no-reward-toggle");
+const noRewardHide = document.querySelector(".no-reward-info");
+const noRewardPledgeAmount = document.querySelector("#no-reward-pledge-amount");
 let blackEditionNum;
 let bambooEditionNum;
 let newBlackEditionTotal;
 let newBlackEditionString;
 let newBambooEditionTotal;
 let newBambooEditionString;
+
+
+noRewardToggle.addEventListener("change", () => {
+    optionToggle.checked = false;
+    optionToggleTwo.checked = false;
+    checkToggle();
+  });
+  
+
 //event listening for a change of the radio selection
 optionToggle.addEventListener("change", () => {
   optionToggleTwo.checked = false;
+  noRewardToggle.checked = false;
   checkToggle();
 });
 //event listening for a change of the radio selection
 optionToggleTwo.addEventListener("change", () => {
   optionToggle.checked = false;
+  noRewardToggle.checked = false;
   checkToggle();
 });
 
@@ -69,6 +85,33 @@ const pledgeBtnTwo = () => {
     checkToggle();
   });
 };
+
+const modalNoReward = () => {
+    noPledgeBtn.addEventListener("click", () => {
+        let noPledgeValue = noRewardPledgeAmount.value;
+        const noPledgeValParse = parseFloat(noPledgeValue);
+        totalPledge = num + noPledgeValParse;
+        totalPledgeString = totalPledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        currentPledge.innerHTML = totalPledgeString;
+        //adding one to the backer total 
+        replaceBackText++;
+        console.log(newBackerTotal);
+        //turning the new backer total into a string, and adding the commas back in
+        newBackerString = replaceBackText.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        //set the new backer number to the HTML
+        currentBackers.innerHTML = newBackerString;
+        //turning the bamboo pledge amount into a number
+        bambooEditionNum = parseInt(bambooEditionLeft.innerHTML);
+        //subtracting one from the pledge available 
+        newBambooEditionTotal = bambooEditionNum - 1;
+        //turning the pledges available into a string
+        newBambooEditionString = newBambooEditionTotal.toString();
+        //setting pledges available to both main page and modal
+        bambooEditionLeft.innerHTML = newBambooEditionString;
+        optionOneLeft.innerHTML = newBambooEditionString;
+        noRewardPledgeAmount.value ="";
+    })
+}
 
 const modalOptionOne = () => {
   btnOne.addEventListener("click", (e) => {
@@ -145,18 +188,28 @@ const checkToggle = () => {
   if (optionToggle.checked == true) {
   
     pledgeInfoTwo.style.display = "none";
+    noRewardHide.style.display = "none";
     pledgeBorder.style.border = "3px solid #3DB4AB";
     pledgeBorderTwo.style.border = "1px solid lightgrey";
+    noPledge.style.border = "1px solid lightgrey";
     pledgeInfo.style.display ="block";
 //if the other radio is selected add the css to that radio instead
   } else if (optionToggleTwo.checked == true) {
    
     pledgeInfo.style.display = "none";
+    noRewardHide.style.display = "none";
     pledgeBorderTwo.style.border = "3px solid #3DB4AB";
     pledgeBorder.style.border = "1px solid lightgrey";
+    noPledge.style.border = "1px solid lightgrey";
     pledgeInfoTwo.style.display = "block";
-  } else {
-    console.log("other");
+  } 
+  else if(noRewardToggle.checked == true){
+    pledgeInfo.style.display = "none";
+    pledgeInfoTwo.style.display = "none";
+    noPledge.style.border = "3px solid #3DB4AB";
+    pledgeBorder.style.border = "1px solid lightgrey";
+    pledgeBorderTwo.style.border = "1px solid lightgrey";
+    noRewardHide.style.display = "block";
   }
 };
 
@@ -169,6 +222,7 @@ const disableButtonOne = () => {
       } else {
           btnOne.disabled = true;
           console.log("disabled");
+          btnOne.style.backgroundColor = "#c1edea";
       }
     });
 };
@@ -186,11 +240,28 @@ const disableButtonTwo = () => {
         }
       });
 }
+
+const disableNoRewardButton = () => {
+    noRewardPledgeAmount.addEventListener("input", () => {
+        if(noRewardPledgeAmount.value > 0 || noRewardPledgeAmount.value != ""){
+            noPledgeBtn.disabled = false;
+            noPledgeBtn.style.backgroundColor = "#3DB4Ab";
+        } else if(noRewardPledgeAmount.value <= 0 || noRewardPledgeAmount.value == ""){
+            noPledgeBtn.disabled = true;
+            console.log("disabled");
+            noPledgeBtn.style.backgroundColor = "#c1edea";
+        }
+    })
+}
+
+
 //calling functions
 remainingPledge();
+modalNoReward();
 modalOptionOne();
 modalOptionTwo();
 pledgeButtonOne();
 pledgeBtnTwo();
 disableButtonOne();
 disableButtonTwo();
+disableNoRewardButton();
