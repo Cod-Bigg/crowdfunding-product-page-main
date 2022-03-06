@@ -358,12 +358,12 @@ height: 1px;
     .crowdfund-track{
         width: 70%;
         margin-left: 10%;
+        flex-direction: column;
+        justify-content: initial;
+        height: 400px;
     }
     .crowdfund-container{
-        margin-top: 3%;
-    }
-    .modal-content{
-        width: 80%;
+        margin-top: 5%;
     }
     .pledge-option input[type="number"]{
         margin-left: 0%;
@@ -373,5 +373,16 @@ height: 1px;
     }
     #crowdfund-option-2-modal span{
         margin-left: 30px;
+    }
+    .pledgeAmnt{
+        height: 40%;
+    }
+    .backPledge{
+        width: 100%;
+        margin-top: 5%;
+    }
+    h2{
+        padding-top: 0px;
+        padding-left: 100px;
     }
 }
