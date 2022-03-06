@@ -267,5 +267,22 @@ height: 1px;
     padding:20px;
 }
 @media only screen and (max-width: 1200px) and (min-width: 1025px){
-    
+    nav{
+        margin-right: 25%;
+    }
+    .info{
+        width: 45%;
+        margin-left:20%;
+    }
+    .intro-block{
+        margin-left: 10%;
+    }
+    .crowdfund-track{
+        margin-left: 10%;
+    }
+    .modal-content{
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 769px){
 }
