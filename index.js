@@ -4,6 +4,7 @@ let newBackerTotal;
 let newBackerString;
 let totalPledge;
 let currentParse;
+const bookmark = document.querySelector("#bookmark");
 const pledgeButton = document.querySelector("#btn-pledge-1");
 const pledgeButtonTwo = document.querySelector("#btn-pledge-2");
 const pledgeOneInput = document.querySelector("#pledge-amount");
@@ -46,7 +47,9 @@ noRewardToggle.addEventListener("change", () => {
     optionToggleTwo.checked = false;
     checkToggle();
   });
-  
+  bookmark.addEventListener("click", () => {
+    bookmark.textContent = "Bookmarked!"
+  })
 
 //event listening for a change of the radio selection
 optionToggle.addEventListener("change", () => {
