@@ -304,19 +304,16 @@ height: 1px;
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 481px){
-    .info{
-        width: 45%;
-        margin-left:20%;
+    nav{
+        float: none;
+        margin-left:10%;
     }
     .intro-block{
-        margin-left: 15%;
-        width: 55%;
+        width: 70%;
+        margin-left: 10%;
     }
     .crowdfund-track{
+        width: 70%;
         margin-left: 10%;
-        width: 65%;
-    }
-    .modal-content{
-        width: 85%;
     }
 }
