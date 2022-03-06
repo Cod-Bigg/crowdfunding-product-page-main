@@ -272,14 +272,14 @@ height: 1px;
     }
     .info{
         width: 45%;
-        margin-left:12%;
+       
     }
     .intro-block{
-        margin-left: 3%;
+        margin-left: 15%;
 
     }
     .crowdfund-track{
-        margin-left: 2%;
+        margin-left: 15%;
     }
     .modal-content{
         width: 75%;
@@ -301,6 +301,12 @@ height: 1px;
     }
     .modal-content{
         width: 85%;
+    }
+    .crowdfund-container{
+        margin-top: 13%;
+    }
+    .backPledge{
+        width: 40%;
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 481px){
@@ -337,6 +343,10 @@ height: 1px;
     }
     #crowdfund-option-2-modal span{
         margin-left: 30px;
+    }
+    .backPledge{
+        margin: 5%;
+        width: 100%;
     }
 }
 @media only screen and (max-width: 480px) and (min-width: 320px){
