@@ -304,9 +304,16 @@ height: 1px;
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 481px){
+    nav a{
+        padding: 5%;
+    }
     nav{
         float: none;
         margin-left:10%;
+    }
+    .info{
+        width: 70%;
+        margin-left: 10%;
     }
     .intro-block{
         width: 70%;
@@ -315,5 +322,56 @@ height: 1px;
     .crowdfund-track{
         width: 70%;
         margin-left: 10%;
+    }
+    .crowdfund-container{
+        margin-top: 3%;
+    }
+    .modal-content{
+        width: 80%;
+    }
+    .pledge-option input[type="number"]{
+        margin-left: 0%;
+    }
+    .pledge-option span{
+        margin-left: 30px;
+    }
+    #crowdfund-option-2-modal span{
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    nav a{
+        padding: 5%;
+    }
+    nav{
+        float: none;
+        margin-left:10%;
+    }
+    .info{
+        width: 70%;
+        margin-left: 10%;
+    }
+    .intro-block{
+        width: 70%;
+        margin-left: 10%;
+    }
+    .crowdfund-track{
+        width: 70%;
+        margin-left: 10%;
+    }
+    .crowdfund-container{
+        margin-top: 3%;
+    }
+    .modal-content{
+        width: 80%;
+    }
+    .pledge-option input[type="number"]{
+        margin-left: 0%;
+    }
+    .pledge-option span{
+        margin-left: 30px;
+    }
+    #crowdfund-option-2-modal span{
+        margin-left: 30px;
     }
 }
