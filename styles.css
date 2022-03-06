@@ -272,17 +272,34 @@ height: 1px;
     }
     .info{
         width: 45%;
-        margin-left:20%;
+        margin-left:12%;
     }
     .intro-block{
-        margin-left: 10%;
+        margin-left: 3%;
+
     }
     .crowdfund-track{
-        margin-left: 10%;
+        margin-left: 2%;
     }
     .modal-content{
         width: 75%;
     }
 }
 @media only screen and (max-width: 1024px) and (min-width: 769px){
+
+    .info{
+        width: 45%;
+        margin-left:20%;
+    }
+    .intro-block{
+        margin-left: 15%;
+        width: 55%;
+    }
+    .crowdfund-track{
+        margin-left: 10%;
+        width: 65%;
+    }
+    .modal-content{
+        width: 85%;
+    }
 }
